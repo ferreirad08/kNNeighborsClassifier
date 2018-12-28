@@ -68,5 +68,4 @@ nearest_train_instances =
 nearest_train_labels = 
 1 
 1 
-3 
-2
+3
