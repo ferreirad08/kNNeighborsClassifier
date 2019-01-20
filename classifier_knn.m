@@ -86,8 +86,8 @@ for i = 1:P
     [~,I] = sort(distances);
     nearest_train_labels = train_labels(I(1:k));
     % Frequencies of the k nearest training labels
-    N = histcounts(nearest_train_labels);
-    frequencies = N(nearest_train_labels-min(nearest_train_labels)+1);
+    N = histcounts(nearest_train_labels,1:max(nearest_train_labels)+1);
+    frequencies = N(nearest_train_labels);
     % Nearest training label with maximum frequency (if duplicated, check the nearest training instance)
     [~,J] = max(frequencies);
     estimated_labels(i) = nearest_train_labels(J);
