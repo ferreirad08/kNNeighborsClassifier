@@ -1,4 +1,4 @@
-# K-Nearest-Neighbors-k-NN-R2017b
+# k-Nearest Neighbors (kNN) - MATLAB R2017b
 classifier_knn
 
 Syntax 
@@ -20,7 +20,8 @@ test_instance is an 1-by-N matrix, with one instance of N features to be classif
 k is a scalar, with the number of nearest neighbors selected. 
 test_labels is an P-by-1 matrix, with respective P labels to each test instance (Used to check the accuracy between 0 and 100%).
 
-Examples 
+Examples
+
 1. 
 train_instances = [8 5; 3 7; 3 6; 7 3]; 
 %train_labels = ["fruit"; "vegetable"; "protein"; "fruit"]; 
