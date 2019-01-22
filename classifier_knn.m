@@ -1,5 +1,5 @@
 function [estimated_labels,accuracy,nearest_train_instances,nearest_train_labels] = classifier_knn(train_instances,train_labels,test_instances,k,test_labels)
-%K Nearest Neighbors (k-NN)
+%k-Nearest Neighbors (kNN)
 %
 %Author: David Ferreira - Federal University of Amazonas
 %
