@@ -18,7 +18,7 @@ function plot_knn(train_instances,train_labels,test_instance,k)
 %
 %Example
 %train_instances = [8 5; 3 7; 3 6; 7 3];
-%%train_labels = ["fruit"; "vegetable"; "protein"; "fruit"];
+%%train_labels = ["fruit"; "vegetable"; "protein"; "fruit"]; 
 %train_labels = [1; 2; 3; 1];
 %test_instance = [6 4];
 %k = 3;
