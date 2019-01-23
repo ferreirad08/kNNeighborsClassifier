@@ -55,7 +55,7 @@ function [estimated_label,nearest_train_instances,nearest_train_labels] = classi
     
 % Euclidean distance between two points
 A = repmat(test_instance,size(train_instances,1),1)-train_instances;
-distances = sqrt(sum(A.*A,2));
+distances = sqrt(sum(A.^2,2));
 % Sort the distances in ascending order and check the k nearest training labels
 [~,I] = sort(distances);
 nearest_train_labels = train_labels(I(1:k));
