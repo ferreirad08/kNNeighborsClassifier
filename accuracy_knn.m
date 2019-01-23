@@ -17,7 +17,7 @@ function [estimated_labels,accuracy] = accuracy_knn(train_instances,train_labels
 %train_labels is an M-by-1 matrix, with respective M labels to each training instance. 
 %test_instances is an P-by-N matrix, with P instances of N features to be classified.
 %k is a scalar, with the number of nearest neighbors selected.
-%test_labels is an P-by-1 matrix, with respective P labels to each test instance (Used to check the accuracy between 0 and 100%).
+%test_labels is an P-by-1 matrix, with respective P labels to each test instance (Used to check the accuracy between 0 and 1).
 %
 %Examples
 %1.
@@ -44,7 +44,7 @@ function [estimated_labels,accuracy] = accuracy_knn(train_instances,train_labels
 %               1
 %               1
 %     accuracy =
-%               60
+%               0.6000
 
 P = size(test_instances,1);
 estimated_labels = zeros(P,1);
@@ -55,6 +55,6 @@ end
 
 % Check the number of output arguments
 if nargout > 1
-    accuracy = sum(estimated_labels == test_labels)/P*100;
+    accuracy = sum(estimated_labels == test_labels)/P;
 end
 end
