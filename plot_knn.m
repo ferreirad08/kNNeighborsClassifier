@@ -27,9 +27,6 @@ distances = sqrt(sum(A.^2,2));
 % Sort the distances in ascending order
 distances = sort(distances);
 
-feature1 = train_instances(:,1);
-feature2 = train_instances(:,2);
-
 xc = test_instance(1);
 yc = test_instance(2);
 r = distances(k);
@@ -37,6 +34,6 @@ r = distances(k);
 theta = linspace(0,2*pi);
 x = r*cos(theta) + xc;
 y = r*sin(theta) + yc;
-plot(x,y,xc,yc,'o',feature1,feature2,'s')
+plot(x,y,xc,yc,'o',train_instances(:,1),train_instances(:,2),'s')
 axis equal
 end
