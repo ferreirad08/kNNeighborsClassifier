@@ -15,7 +15,7 @@ function [estimated_label,nearest_train_instances,nearest_train_labels] = classi
 %1. Returns the estimated label of one test instances.
 %2. Returns the estimated label of one test instance and the k nearest training instances.
 %3. Returns the estimated label of one test instance, the k nearest training instances and the k nearest training labels.
-%4. Creates a chart circulating the nearest training instances.
+%4. Creates a chart circulating the nearest training instances (chart 2-D of the first two features of each instance).
 %
 %train_instances is an M-by-N matrix, with M instances of N features. 
 %train_labels is an M-by-1 matrix, with respective M labels to each training instance. 
