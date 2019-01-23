@@ -27,9 +27,9 @@ distances = sqrt(sum(A.^2,2));
 % Sort the distances in ascending order
 distances = sort(distances);
 
+r = distances(k);
 xc = test_instance(1);
 yc = test_instance(2);
-r = distances(k);
 
 theta = linspace(0,2*pi);
 x = r*cos(theta) + xc;
