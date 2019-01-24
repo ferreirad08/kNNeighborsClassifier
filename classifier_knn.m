@@ -15,7 +15,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %1. Returns the estimated label of one test instances.
 %2. Returns the estimated label of one test instance and the k nearest training labels.
 %3. Returns the estimated label of one test instance, the k nearest training labels and the k nearest training instances.
-%4. Creates a chart circulating the nearest training instances (For plotting, instances must have only two features (2-D)).
+%4. Creates a chart circulating the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
 %
 %train_instances is an M-by-N matrix, with M instances of N features. 
 %train_labels is an M-by-1 matrix, with respective M labels to each training instance. 
@@ -58,7 +58,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %
 %4.
 %     classifier_knn(train_instances,train_labels,test_instance,k,'plot');
-%               Note: the image is among the downloaded files.
+%               Note: images 2-D and 3-D are among the downloaded files.
 
 % Euclidean distance between two points
 A = repmat(test_instance,size(train_instances,1),1)-train_instances;
@@ -79,10 +79,12 @@ if nargout > 2
 end
 
 % Check the number of input arguments
-if nargin > 4
-    if strcmp(status_plot,'plot')
-        if size(train_instances,2) == 2
+if nargin > 4 && strcmp(status_plot,'plot')
+    data_dimension = size(train_instances,2);
+    switch data_dimension
+        case 2
             figure
+            grid on
             hold on
 
             r = distances(k);
@@ -105,9 +107,30 @@ if nargin > 4
                 L = find(train_labels==C(i));
                 plot(train_instances(L,1),train_instances(L,2),Markers{i})
             end
-        else
-            error('For plotting, instances must have only two features (2-D).')
-        end
+        case 3
+            figure
+            
+            plot3(test_instance(1),test_instance(2),test_instance(3),'xk',...
+                'MarkerSize',8,...
+                'LineWidth',2)
+            
+            grid on
+            hold on
+            
+            for i = 1:k
+                plot3([test_instance(1) nearest_train_instances(i,1)],...
+                    [test_instance(2) nearest_train_instances(i,2)],...
+                    [test_instance(3) nearest_train_instances(i,3)],'-k')
+            end
+
+            Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
+            C = unique(train_labels);
+            for i = 1:size(C,1)
+                L = find(train_labels==C(i));
+                plot3(train_instances(L,1),train_instances(L,2),train_instances(L,3),Markers{i})
+            end            
+        otherwise
+            error('For plotting, instances must have only two or three features (2-D or 3-D).')
     end
 end
 end
