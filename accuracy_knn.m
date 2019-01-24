@@ -22,7 +22,7 @@ function [estimated_labels,accuracy] = accuracy_knn(train_instances,train_labels
 %Examples
 %1.
 %     train_instances = [8 5; 3 7; 3 6; 7 3];
-%     %train_labels = ["fruit"; "vegetable"; "protein"; "fruit"];
+%     %train_labels = {'fruit';'vegetable';'protein';'fruit'};
 %     train_labels = [1; 2; 3; 1];
 %     test_instances = [6 4; 6 4; 6 4; 6 4; 6 4];
 %     k = 3;
