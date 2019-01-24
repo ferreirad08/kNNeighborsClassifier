@@ -91,8 +91,12 @@ if nargin > 4
         theta = linspace(0,2*pi);
         x = r*cos(theta) + xc;
         y = r*sin(theta) + yc;
-        plot(x,y,xc,yc,'x')
+        plot(x,y,'k')
         axis equal
+        
+        plot(xc,yc,'xk',...
+            'MarkerSize',8,...
+            'LineWidth',2)
         
         Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
         C = unique(train_labels);
