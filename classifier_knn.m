@@ -15,7 +15,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %1. Returns the estimated label of one test instances.
 %2. Returns the estimated label of one test instance and the k nearest training labels.
 %3. Returns the estimated label of one test instance, the k nearest training labels and the k nearest training instances.
-%4. Creates a chart circulating the nearest training instances (chart 2-D of the first two features of each instance).
+%4. Creates a chart circulating the nearest training instances (For plotting, instances must have only two features (2-D)).
 %
 %train_instances is an M-by-N matrix, with M instances of N features. 
 %train_labels is an M-by-1 matrix, with respective M labels to each training instance. 
@@ -81,28 +81,32 @@ end
 % Check the number of input arguments
 if nargin > 4
     if strcmp(status_plot,'plot')
-        figure
-        hold on
+        if size(train_instances,2) == 2
+            figure
+            hold on
 
-        r = distances(k);
-        xc = test_instance(1);
-        yc = test_instance(2);
+            r = distances(k);
+            xc = test_instance(1);
+            yc = test_instance(2);
 
-        theta = linspace(0,2*pi);
-        x = r*cos(theta) + xc;
-        y = r*sin(theta) + yc;
-        plot(x,y,'k')
-        axis equal
-        
-        plot(xc,yc,'xk',...
-            'MarkerSize',8,...
-            'LineWidth',2)
-        
-        Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
-        C = unique(train_labels);
-        for i = 1:size(C,1)
-            L = find(train_labels==C(i));
-            plot(train_instances(L,1),train_instances(L,2),Markers{i})
+            theta = linspace(0,2*pi);
+            x = r*cos(theta) + xc;
+            y = r*sin(theta) + yc;
+            plot(x,y,'k')
+            axis equal
+
+            plot(xc,yc,'xk',...
+                'MarkerSize',8,...
+                'LineWidth',2)
+
+            Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
+            C = unique(train_labels);
+            for i = 1:size(C,1)
+                L = find(train_labels==C(i));
+                plot(train_instances(L,1),train_instances(L,2),Markers{i})
+            end
+        else
+            error('For plotting, instances must have only two features (2-D).')
         end
     end
 end
