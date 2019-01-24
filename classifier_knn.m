@@ -98,7 +98,7 @@ if nargin > 4
         C = unique(train_labels);
         for i = 1:size(C,1)
             L = find(train_labels==C(i));
-            plot(train_instances(L,1),train_instances(L,2),strcat(Markers{i}))
+            plot(train_instances(L,1),train_instances(L,2),Markers{i})
         end
     end
 end
