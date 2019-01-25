@@ -67,7 +67,7 @@ end
 
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
-    if iscell(Ynew), Ynew = cell2num(Ynew); end
+    if iscell(Ynew), Ynew = cell2num(Ynew,C); end
     accuracy = sum(label == Ynew)/P;
 end
 
