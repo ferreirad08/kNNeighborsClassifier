@@ -1,7 +1,7 @@
-function [Y,C] = cell2num(Y)
+function [Y,C] = cell2num(Y,C)
     Ycell = Y;
     Y = zeros(size(Ycell,1),1);
-    C = unique(Ycell);
+    if nargin < 2, C = unique(Ycell); end
     for i = 1:size(Ycell,1)
         for j = 1:size(C,1)
             if strcmp(Ycell(i),C(j)), Y(i) = j; end
