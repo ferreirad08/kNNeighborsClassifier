@@ -2,6 +2,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %k-Nearest Neighbors (kNN)
 %
 %Author: David Ferreira - Federal University of Amazonas
+%Contact: ferreirad08@gmail.com
 %
 %classifier_knn
 %
