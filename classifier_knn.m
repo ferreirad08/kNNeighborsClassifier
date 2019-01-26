@@ -1,16 +1,16 @@
-function [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k,status_plot)
+function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %k-Nearest Neighbors (kNN)
 %
 %Author: David Ferreira - Federal University of Amazonas
 %Contact: ferreirad08@gmail.com
 %
-%classifierplot_knn
+%classifier_knn
 %
 %Syntax
-%1. label = classifierplot_knn(X,Y,Xnew,k)
-%2. [label,Ynearest] = classifierplot_knn(X,Y,Xnew,k)
-%3. [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k)
-%4. classifierplot_knn(X,Y,Xnew,k,'plot');
+%1. label = classifier_knn(X,Y,Xnew,k)
+%2. [label,Ynearest] = classifier_knn(X,Y,Xnew,k)
+%3. [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
+%4. classifier_knn(X,Y,Xnew,k,'plot');
 %
 %Description 
 %1. Returns the estimated label of one test instances.
@@ -31,12 +31,12 @@ function [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k,status_plot)
 %     Y = [1; 2; 3; 1];
 %     Xnew = [6 4]; 
 %     k = 3;
-%     label = classifierplot_knn(X,Y,Xnew,k)
+%     label = classifier_knn(X,Y,Xnew,k)
 %     label = 
 %               1
 %
 %2.
-%     [label,Ynearest] = classifierplot_knn(X,Y,Xnew,k)
+%     [label,Ynearest] = classifier_knn(X,Y,Xnew,k)
 %     label = 
 %               1
 %     Ynearest =
@@ -45,7 +45,7 @@ function [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k,status_plot)
 %               3
 %
 %3.
-%     [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k)
+%     [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
 %     label = 
 %               1
 %     Ynearest =
@@ -58,7 +58,7 @@ function [label,Ynearest,Xnearest] = classifierplot_knn(X,Y,Xnew,k,status_plot)
 %               3 6
 %
 %4.
-%     classifierplot_knn(X,Y,Xnew,k,'plot');
+%     classifier_knn(X,Y,Xnew,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 % Euclidean distance between two points
