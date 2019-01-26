@@ -27,39 +27,41 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %Examples
 %1.
 %     X = [8 5; 3 7; 3 6; 7 3]; 
-%     %Y = {'fruit';'vegetable';'protein';'fruit'}; 
-%     Y = [1; 2; 3; 1];
+%     Y = {'fruit';'vegetable';'protein';'fruit'}; 
 %     Xnew = [6 4]; 
 %     k = 3;
 %     label = classifier_knn(X,Y,Xnew,k)
 %     label = 
-%               1
+%         'fruit'
 %
 %2.
 %     [label,Ynearest] = classifier_knn(X,Y,Xnew,k)
 %     label = 
-%               1
+%         'fruit'
 %     Ynearest =
-%               1
-%               1
-%               3
+%         'fruit'
+%         'fruit'
+%         'protein'
 %
 %3.
 %     [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
 %     label = 
-%               1
+%         'fruit'
 %     Ynearest =
-%               1
-%               1
-%               3
+%         'fruit'
+%         'fruit'
+%         'protein'
 %     Xnearest = 
-%               7 3
-%               8 5
-%               3 6
+%         7 3
+%         8 5
+%         3 6
 %
 %4.
 %     classifier_knn(X,Y,Xnew,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
+
+tf = iscell(Y);
+if tf, [Y,C2] = cell2id(Y); end
 
 % Euclidean distance between two points
 A = repmat(Xnew,size(X,1),1)-X;
@@ -75,9 +77,8 @@ frequencies = N(Ynearest);
 label = Ynearest(J);
 
 % Check the number of output arguments
-if nargout > 2
-    Xnearest = X(I(1:k),:);
-end
+if nargout > 1 && tf, Ynearest = C2(Ynearest); end
+if nargout > 2, Xnearest = X(I(1:k),:); end
 
 % Check the number of input arguments
 if nargin > 4 && strcmp(status_plot,'plot')
@@ -85,8 +86,8 @@ if nargin > 4 && strcmp(status_plot,'plot')
     switch data_dimension
         case 2
             figure
-            grid on
             hold on
+            grid on
 
             r = distances(k);
             xc = Xnew(1);
@@ -95,7 +96,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
             theta = linspace(0,2*pi);
             x = r*cos(theta) + xc;
             y = r*sin(theta) + yc;
-            plot(x,y,'k')
+            plot(x,y,':k')
             axis equal
 
             plot(xc,yc,'xk',...
@@ -115,13 +116,14 @@ if nargin > 4 && strcmp(status_plot,'plot')
                 'MarkerSize',8,...
                 'LineWidth',2)
             
-            grid on
             hold on
+            grid on
             
+            Xnearest = X(I(1:k),:);
             for i = 1:k
                 plot3([Xnew(1) Xnearest(i,1)],...
                     [Xnew(2) Xnearest(i,2)],...
-                    [Xnew(3) Xnearest(i,3)],'-k')
+                    [Xnew(3) Xnearest(i,3)],':k')
             end
 
             Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
@@ -134,4 +136,6 @@ if nargin > 4 && strcmp(status_plot,'plot')
             error('For plotting, instances must have only two or three features (2-D or 3-D).')
     end
 end
+
+if tf, label = C2(label); end
 end
