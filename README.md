@@ -2,7 +2,7 @@
 
 Function 
 1. classifier_knn 
-2. accuracy_knn
+2. predict_knn
 
 Description 
 1. Returns the estimated label of one test instance, the k nearest training labels, the k nearest training instances and creates a chart circulating the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D).
