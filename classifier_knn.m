@@ -9,7 +9,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %Syntax
 %1. label = classifier_knn(X,Y,Xnew,k)
 %2. [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
-%3. classifier_knn(X,Y,Xnew,k,'plot');
+%3. [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,'plot');
 %
 %Description 
 %1. Returns the estimated label of one test instances.
@@ -46,7 +46,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %         3 6 3
 %
 %3.
-%     classifier_knn(X,Y,Xnew,k,'plot');
+%     [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 tf = iscell(Y);
