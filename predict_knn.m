@@ -22,9 +22,9 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %
 %Examples
 %1.
-%     X = [8 5; 3 7; 3 6; 7 3];
+%     X = [8 5 1; 3 7 2; 3 6 3; 7 3 1];
 %     Y = {'fruit';'vegetable';'protein';'fruit'};
-%     Xnew = [6 4; 6 4; 6 4];
+%     Xnew = [6 4 1; 6 4 1; 6 4 1];
 %     k = 3;
 %     label = predict_knn(X,Y,Xnew,k)
 %     label = 

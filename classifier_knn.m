@@ -8,15 +8,13 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %
 %Syntax
 %1. label = classifier_knn(X,Y,Xnew,k)
-%2. [label,Ynearest] = classifier_knn(X,Y,Xnew,k)
-%3. [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
-%4. classifier_knn(X,Y,Xnew,k,'plot');
+%2. [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
+%3. classifier_knn(X,Y,Xnew,k,'plot');
 %
 %Description 
 %1. Returns the estimated label of one test instances.
-%2. Returns the estimated label of one test instance and the k nearest training labels.
-%3. Returns the estimated label of one test instance, the k nearest training labels and the k nearest training instances.
-%4. Creates a chart circulating the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
+%2. Returns the estimated label of one test instance, the k nearest training labels and the k nearest training instances.
+%3. Creates a chart circulating the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
 %
 %X is an M-by-N matrix, with M instances of N features. 
 %Y is an M-by-1 matrix, with respective M labels to each training instance. 
@@ -26,24 +24,15 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %
 %Examples
 %1.
-%     X = [8 5; 3 7; 3 6; 7 3]; 
+%     X = [8 5 1; 3 7 2; 3 6 3; 7 3 1]; 
 %     Y = {'fruit';'vegetable';'protein';'fruit'}; 
-%     Xnew = [6 4]; 
+%     Xnew = [6 4 1]; 
 %     k = 3;
 %     label = classifier_knn(X,Y,Xnew,k)
 %     label = 
 %         'fruit'
 %
 %2.
-%     [label,Ynearest] = classifier_knn(X,Y,Xnew,k)
-%     label = 
-%         'fruit'
-%     Ynearest =
-%         'fruit'
-%         'fruit'
-%         'protein'
-%
-%3.
 %     [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k)
 %     label = 
 %         'fruit'
@@ -52,11 +41,11 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %         'fruit'
 %         'protein'
 %     Xnearest = 
-%         7 3
-%         8 5
-%         3 6
+%         7 3 1
+%         8 5 1
+%         3 6 3
 %
-%4.
+%3.
 %     classifier_knn(X,Y,Xnew,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
 
