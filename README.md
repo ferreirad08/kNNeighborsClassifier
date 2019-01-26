@@ -1,7 +1,7 @@
 # k-Nearest Neighbors (kNN) - MATLAB
 
 Function 
-1. classifier_knn 
+1. classifierplot_knn 
 2. predict_knn
 
 Description 
