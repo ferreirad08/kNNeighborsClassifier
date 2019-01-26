@@ -47,7 +47,7 @@ function [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
 %         0.6000
 
 tf = iscell(Y);
-if tf, [Y,C] = cell2id(Y); end
+if tf, [Y,C] = id(Y); end
 
 P = size(Xnew,1);
 label = zeros(P,1);
@@ -68,7 +68,7 @@ end
 
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
-    if iscell(Ynew), Ynew = cell2id(Ynew,C); end
+    if iscell(Ynew), Ynew = id(Ynew,C); end
     accuracy = sum(label == Ynew)/P;
 end
 
