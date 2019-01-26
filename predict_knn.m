@@ -42,7 +42,8 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %     accuracy =
 %         0.6667
 
-if iscell(Y), [Y,C] = cell2id(Y); end
+tf = iscell(Y);
+if tf, [Y,C] = cell2id(Y); end
 
 P = size(Xnew,1);
 label = zeros(P,1);
@@ -67,5 +68,5 @@ if nargin > 4 && nargout > 1
     accuracy = sum(label == Ynew)/P;
 end
 
-if iscell(Y), label = C(label); end
+if tf, label = C(label); end
 end
