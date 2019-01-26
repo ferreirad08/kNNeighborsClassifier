@@ -1,16 +1,16 @@
-function [estimated_label,nearest_train_labels,nearest_train_instances] = classifier_knn(train_instances,train_labels,test_instance,k,status_plot)
+function [estimated_label,nearest_train_labels,nearest_train_instances] = classifierplot_knn(train_instances,train_labels,test_instance,k,status_plot)
 %k-Nearest Neighbors (kNN)
 %
 %Author: David Ferreira - Federal University of Amazonas
 %Contact: ferreirad08@gmail.com
 %
-%classifier_knn
+%classifierplot_knn
 %
 %Syntax
-%1. estimated_label = classifier_knn(train_instances,train_labels,test_instance,k)
-%2. [estimated_label,nearest_train_labels] = classifier_knn(train_instances,train_labels,test_instance,k)
-%3. [estimated_label,nearest_train_labels,nearest_train_instances] = classifier_knn(train_instances,train_labels,test_instance,k)
-%4. classifier_knn(train_instances,train_labels,test_instance,k,'plot');
+%1. estimated_label = classifierplot_knn(train_instances,train_labels,test_instance,k)
+%2. [estimated_label,nearest_train_labels] = classifierplot_knn(train_instances,train_labels,test_instance,k)
+%3. [estimated_label,nearest_train_labels,nearest_train_instances] = classifierplot_knn(train_instances,train_labels,test_instance,k)
+%4. classifierplot_knn(train_instances,train_labels,test_instance,k,'plot');
 %
 %Description 
 %1. Returns the estimated label of one test instances.
@@ -31,12 +31,12 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %     train_labels = [1; 2; 3; 1];
 %     test_instance = [6 4]; 
 %     k = 3;
-%     estimated_label = classifier_knn(train_instances,train_labels,test_instance,k)
+%     estimated_label = classifierplot_knn(train_instances,train_labels,test_instance,k)
 %     estimated_label = 
 %               1
 %
 %2.
-%     [estimated_label,nearest_train_labels] = classifier_knn(train_instances,train_labels,test_instance,k)
+%     [estimated_label,nearest_train_labels] = classifierplot_knn(train_instances,train_labels,test_instance,k)
 %     estimated_label = 
 %               1
 %     nearest_train_labels =
@@ -45,7 +45,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %               3
 %
 %3.
-%     [estimated_label,nearest_train_labels,nearest_train_instances] = classifier_knn(train_instances,train_labels,test_instance,k)
+%     [estimated_label,nearest_train_labels,nearest_train_instances] = classifierplot_knn(train_instances,train_labels,test_instance,k)
 %     estimated_label = 
 %               1
 %     nearest_train_labels =
@@ -58,7 +58,7 @@ function [estimated_label,nearest_train_labels,nearest_train_instances] = classi
 %               3 6
 %
 %4.
-%     classifier_knn(train_instances,train_labels,test_instance,k,'plot');
+%     classifierplot_knn(train_instances,train_labels,test_instance,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 % Euclidean distance between two points
