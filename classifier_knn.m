@@ -76,10 +76,6 @@ frequencies = N(Ynearest);
 [~,J] = max(frequencies);
 label = Ynearest(J);
 
-% Check the number of output arguments
-if nargout > 1 && tf, Ynearest = Ccell(Ynearest); end
-if nargout > 2, Xnearest = X(I(1:k),:); end
-
 % Check the number of input arguments
 if nargin > 4 && strcmp(status_plot,'plot')
     data_dimension = size(X,2);
@@ -137,5 +133,8 @@ if nargin > 4 && strcmp(status_plot,'plot')
     end
 end
 
+% Check the number of output arguments
+if nargout > 1 && tf, Ynearest = Ccell(Ynearest); end
+if nargout > 2, Xnearest = X(I(1:k),:); end
 if tf, label = Ccell(label); end
 end
