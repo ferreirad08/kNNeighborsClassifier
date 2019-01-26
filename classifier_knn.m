@@ -61,7 +61,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 tf = iscell(Y);
-if tf, [Y,C2] = cell2id(Y); end
+if tf, [Y,Ccell] = cell2id(Y); end
 
 % Euclidean distance between two points
 A = repmat(Xnew,size(X,1),1)-X;
@@ -77,7 +77,7 @@ frequencies = N(Ynearest);
 label = Ynearest(J);
 
 % Check the number of output arguments
-if nargout > 1 && tf, Ynearest = C2(Ynearest); end
+if nargout > 1 && tf, Ynearest = Ccell(Ynearest); end
 if nargout > 2, Xnearest = X(I(1:k),:); end
 
 % Check the number of input arguments
@@ -137,5 +137,5 @@ if nargin > 4 && strcmp(status_plot,'plot')
     end
 end
 
-if tf, label = C2(label); end
+if tf, label = Ccell(label); end
 end
