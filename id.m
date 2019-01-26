@@ -1,4 +1,4 @@
-function [Y,C] = cell2id(Y,C)
+function [Y,C] = id(Y,C)
     Ycell = Y;
     Y = zeros(size(Ycell,1),1);
     if nargin < 2, C = unique(Ycell); end
