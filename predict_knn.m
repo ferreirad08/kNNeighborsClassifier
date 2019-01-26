@@ -1,14 +1,14 @@
-function [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
-%k-Nearest Neighbors (kNN) Accuracy
+function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
+%k-Nearest Neighbors (kNN)
 %
 %Author: David Ferreira - Federal University of Amazonas
 %Contact: ferreirad08@gmail.com
 %
-%accuracy_knn
+%predict_knn
 %
 %Syntax
-%1. label = accuracy_knn(X,Y,Xnew,k)
-%2. [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
+%1. label = predict_knn(X,Y,Xnew,k)
+%2. [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %
 %Description 
 %1. Returns the estimated labels of one or multiple test instances.
@@ -24,27 +24,23 @@ function [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
 %1.
 %     X = [8 5; 3 7; 3 6; 7 3];
 %     Y = {'fruit';'vegetable';'protein';'fruit'};
-%     Xnew = [6 4; 6 4; 6 4; 6 4; 6 4];
+%     Xnew = [6 4; 6 4; 6 4];
 %     k = 3;
-%     label = accuracy_knn(X,Y,Xnew,k)
+%     label = predict_knn(X,Y,Xnew,k)
 %     label = 
-%         'fruit'
-%         'fruit'
 %         'fruit'
 %         'fruit'
 %         'fruit'
 %
 %2.
-%     Ynew = {'fruit';'fruit';'fruit';'vegetable';'protein'};
-%     [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
+%     Ynew = {'fruit';'fruit';'vegetable'};
+%     [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %     label = 
 %         'fruit'
 %         'fruit'
 %         'fruit'
-%         'fruit'
-%         'fruit'
 %     accuracy =
-%         0.6000
+%         0.6667
 
 if iscell(Y), [Y,C] = cell2id(Y); end
 
