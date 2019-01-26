@@ -2,6 +2,7 @@ function [label,accuracy] = accuracy_knn(X,Y,Xnew,k,Ynew)
 %k-Nearest Neighbors (kNN) Accuracy
 %
 %Author: David Ferreira - Federal University of Amazonas
+%Contact: ferreirad08@gmail.com
 %
 %accuracy_knn
 %
