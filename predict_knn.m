@@ -43,7 +43,7 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %         0.6667
 
 tf = iscell(Y);
-if tf, [Y,Ccell] = cell2id(Y); end
+if tf, [Ccell,~,Y] = unique(Y); end
 
 P = size(Xnew,1);
 label = zeros(P,1);
