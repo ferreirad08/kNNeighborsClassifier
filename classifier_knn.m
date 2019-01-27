@@ -50,7 +50,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 tf = iscell(Y);
-if tf, [Y,Ccell] = cell2id(Y); end
+if tf, [Ccell,~,Y] = unique(Y); end
 
 % Euclidean distance between two points
 A = repmat(Xnew,size(X,1),1)-X;
