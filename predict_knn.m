@@ -43,7 +43,7 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %         0.6667
 
 tf = iscell(Y);
-if tf, [Ccell,~,Y] = unique(Y); end
+if tf, [C,~,Y] = unique(Y); end
 
 P = size(Xnew,1);
 label = zeros(P,1);
@@ -64,9 +64,9 @@ end
 
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
-    if iscell(Ynew), Ynew = cell2id(Ynew,Ccell); end
+    if iscell(Ynew), Ynew = cell2id(Ynew,C); end
     accuracy = sum(label == Ynew)/P;
 end
 
-if tf, label = Ccell(label); end
+if tf, label = C(label); end
 end
