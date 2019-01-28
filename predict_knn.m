@@ -74,7 +74,6 @@ end
 function Yid = cell2id(Ynew,C)    
 Yid = zeros(size(Ynew));
 for i = 1:numel(C);
-    I = find(strcmp(Ynew,C(i)));
-    Yid(I) = i;
+    Yid(strcmp(Ynew,C(i))) = i;
 end
 end
