@@ -26,7 +26,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %1.
 %     X = [8 5 1; 3 7 2; 3 6 3; 7 3 1]; 
 %     Y = {'fruit';'vegetable';'protein';'fruit'}; 
-%     Xnew = [6 4 1]; 
+%     Xnew = [6 4 1];
 %     k = 3;
 %     label = classifier_knn(X,Y,Xnew,k)
 %     label = 
@@ -50,7 +50,7 @@ function [label,Ynearest,Xnearest] = classifier_knn(X,Y,Xnew,k,status_plot)
 %               Note: images 2-D and 3-D are among the downloaded files.
 
 tf = iscell(Y);
-if tf, [C1,~,Y] = unique(Y); end
+if tf, [C,~,Y] = unique(Y); end
 
 % Euclidean distance between two points
 A = repmat(Xnew,size(X,1),1)-X;
@@ -84,37 +84,31 @@ if nargin > 4 && strcmp(status_plot,'plot')
             plot(x,y,':k')
             axis equal
 
-            plot(xc,yc,'xk',...
-                'MarkerSize',8,...
-                'LineWidth',2)
+            plot(xc,yc,'xk','MarkerSize',8,'LineWidth',2)
 
             Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
-            C = unique(Y);
-            for i = 1:size(C,1)
-                L = find(Y==C(i));
+            C2 = unique(Y);
+            for i = 1:size(C2,1)
+                L = find(Y==C2(i));
                 plot(X(L,1),X(L,2),Markers{i})
             end
         case 3
             figure
             
-            plot3(Xnew(1),Xnew(2),Xnew(3),'xk',...
-                'MarkerSize',8,...
-                'LineWidth',2)
+            plot3(Xnew(1),Xnew(2),Xnew(3),'xk','MarkerSize',8,'LineWidth',2)
             
             hold on
             grid on
             
             Xnearest = X(I(1:k),:);
             for i = 1:k
-                plot3([Xnew(1) Xnearest(i,1)],...
-                    [Xnew(2) Xnearest(i,2)],...
-                    [Xnew(3) Xnearest(i,3)],':k')
+                plot3([Xnew(1) Xnearest(i,1)],[Xnew(2) Xnearest(i,2)],[Xnew(3) Xnearest(i,3)],':k')
             end
 
             Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
-            C = unique(Y);
-            for i = 1:size(C,1)
-                L = find(Y==C(i));
+            C2 = unique(Y);
+            for i = 1:size(C2,1)
+                L = find(Y==C2(i));
                 plot3(X(L,1),X(L,2),X(L,3),Markers{i})
             end            
         otherwise
@@ -123,7 +117,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
 end
 
 % Check the number of output arguments
-if nargout > 1 && tf, Ynearest = C1(Ynearest); end
+if nargout > 1 && tf, Ynearest = C(Ynearest); end
 if nargout > 2, Xnearest = X(I(1:k),:); end
-if tf, label = C1(label); end
+if tf, label = C(label); end
 end
