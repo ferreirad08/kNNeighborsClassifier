@@ -71,9 +71,7 @@ end
 if tf, label = C(label); end
 end
 
-function Yid = cell2id(Ynew,C)    
-Yid = zeros(size(Ynew));
-for i = 1:numel(C)
-    Yid(strcmp(Ynew,C(i))) = i;
-end
+function Yic = cell2id(Ynew,C)    
+Yic = zeros(size(Ynew));
+for i = 1:numel(C), Yic(strcmp(Ynew,C(i))) = i; end
 end
