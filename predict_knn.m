@@ -64,14 +64,14 @@ end
 
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
-    if iscell(Ynew), Ynew = cell2id(Ynew,C); end
+    if iscell(Ynew), Ynew = cell2ic(Ynew,C); end
     accuracy = sum(label == Ynew)/P;
 end
 
 if tf, label = C(label); end
 end
 
-function Yic = cell2id(Ynew,C)    
+function Yic = cell2ic(Ynew,C)    
 Yic = zeros(size(Ynew));
 for i = 1:numel(C), Yic(strcmp(Ynew,C(i))) = i; end
 end
