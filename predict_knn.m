@@ -73,7 +73,7 @@ end
 
 function Yid = cell2id(Ynew,C)    
 Yid = zeros(size(Ynew));
-for i = 1:numel(C);
+for i = 1:numel(C)
     Yid(strcmp(Ynew,C(i))) = i;
 end
 end
