@@ -72,7 +72,7 @@ if tf, label = C(label); end
 end
 
 function Yid = cell2id(Ynew,C)    
-Yid = zeros(size(Ynew,1),1);
+Yid = zeros(size(Ynew));
 for i = 1:numel(C);
     I = find(strcmp(Ynew,C(i)));
     Yid(I) = i;
