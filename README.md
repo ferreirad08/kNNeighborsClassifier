@@ -10,22 +10,17 @@ Description
 
 Example
 
-load fisheriris
-
-X = meas;
-
-Y = species;
-
-Xnew = [min(X);mean(X);max(X)];
-
-k = 5;
-
-label = predict_knn(X,Y,Xnew,k)
-
-label = 
-
     load fisheriris
-    'versicolor'
-    'virginica'
+    X = meas;
+    Y = species;
+    Xnew = [min(X);mean(X);max(X)];
+    k = 5;
+    label = predict_knn(X,Y,Xnew,k)
+    
+    label =
+    
+        'setosa'
+        'versicolor'
+        'virginica'
 
 See more examples described in the script files.
