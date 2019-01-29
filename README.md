@@ -24,8 +24,8 @@ label = predict_knn(X,Y,Xnew,k)
 
 label = 
 
-    'setosa'
+    load fisheriris
     'versicolor'
-    'virginica''
+    'virginica'
 
 See more examples described in the script files.
