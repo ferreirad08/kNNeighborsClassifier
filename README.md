@@ -10,11 +10,17 @@ Description
 
 Examples
 >> load fisheriris
+
 >> X = meas;
+
 >> Y = species;
+
 >> Xnew = [min(X);mean(X);max(X)];
+
 >> k = 5;
+
 >> label = predict_knn(X,Y,Xnew,k)
+
 
 label = 
 
