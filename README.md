@@ -9,17 +9,17 @@ Description
 2. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
 
 Examples
-    >> load fisheriris
-    >> X = meas;
-    >> Y = species;
-    >> Xnew = [min(X);mean(X);max(X)];
-    >> k = 5;
-    >> label = predict_knn(X,Y,Xnew,k)
+load fisheriris
+X = meas;
+Y = species;
+Xnew = [min(X);mean(X);max(X)];
+k = 5;
+label = predict_knn(X,Y,Xnew,k)
 
-    label = 
+label = 
 
-        'setosa'
-        'versicolor'
-        'virginica''
+    'setosa'
+    'versicolor'
+    'virginica''
 
 See more examples described in the script files.
