@@ -1,4 +1,4 @@
-# k-Nearest Neighbors (kNN) - MATLAB
+# k-Nearest Neighbors (kNN) Algorithm
 
 Function 
 1. classifier_knn 
