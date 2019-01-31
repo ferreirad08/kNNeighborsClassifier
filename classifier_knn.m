@@ -86,7 +86,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
 
             plot(xc,yc,'xk','MarkerSize',8,'LineWidth',2)
 
-            for i = 1:size(C2,1)
+            for i = 1:numel(C2)
                 L = find(Y==C2(i));
                 plot(X(L,1),X(L,2),Markers{i})
             end
@@ -102,7 +102,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
                 plot3([Xnew(1) Xnearest(i,1)],[Xnew(2) Xnearest(i,2)],[Xnew(3) Xnearest(i,3)],':k')
             end
 
-            for i = 1:size(C2,1)
+            for i = 1:numel(C2)
                 L = find(Y==C2(i));
                 plot3(X(L,1),X(L,2),X(L,3),Markers{i})
             end            
