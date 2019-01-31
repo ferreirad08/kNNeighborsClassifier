@@ -70,7 +70,6 @@ if nargin > 4 && strcmp(status_plot,'plot')
     data_dimension = size(X,2);
     switch data_dimension
         case 2
-            figure
             hold on
             grid on
 
@@ -86,15 +85,11 @@ if nargin > 4 && strcmp(status_plot,'plot')
 
             plot(xc,yc,'xk','MarkerSize',8,'LineWidth',2)
 
-            Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
-            C2 = unique(Y);
             for i = 1:size(C2,1)
                 L = find(Y==C2(i));
                 plot(X(L,1),X(L,2),Markers{i})
             end
         case 3
-            figure
-            
             plot3(Xnew(1),Xnew(2),Xnew(3),'xk','MarkerSize',8,'LineWidth',2)
             
             hold on
@@ -105,8 +100,6 @@ if nargin > 4 && strcmp(status_plot,'plot')
                 plot3([Xnew(1) Xnearest(i,1)],[Xnew(2) Xnearest(i,2)],[Xnew(3) Xnearest(i,3)],':k')
             end
 
-            Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
-            C2 = unique(Y);
             for i = 1:size(C2,1)
                 L = find(Y==C2(i));
                 plot3(X(L,1),X(L,2),X(L,3),Markers{i})
@@ -120,4 +113,10 @@ end
 if nargout > 1 && tf, Ynearest = C(Ynearest); end
 if nargout > 2, Xnearest = X(I(1:k),:); end
 if tf, label = C(label); end
+end
+
+function [Markers,C2] = prepare_plot(Y)
+figure
+Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
+C2 = unique(Y);
 end
