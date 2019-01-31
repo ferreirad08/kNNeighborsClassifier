@@ -70,7 +70,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
     data_dimension = size(X,2);
     switch data_dimension
         case 2
-            [Markers,C2] = prepare_plot(Y)
+            [Markers,C2] = prepare_plot(Y);
             hold on
             grid on
 
@@ -91,7 +91,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
                 plot(X(L,1),X(L,2),Markers{i})
             end
         case 3
-            [Markers,C2] = prepare_plot(Y)
+            [Markers,C2] = prepare_plot(Y);
             plot3(Xnew(1),Xnew(2),Xnew(3),'xk','MarkerSize',8,'LineWidth',2)
             
             hold on
