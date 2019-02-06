@@ -22,23 +22,24 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %
 %Examples
 %1.
-%     X = [8 5 1; 3 7 2; 3 6 3; 7 3 1];
-%     Y = {'fruit';'vegetable';'protein';'fruit'};
-%     Xnew = [6 4 1; 6 4 1; 6 4 1];
-%     k = 3;
+%     load fisheriris
+%     X = meas;
+%     Y = species;
+%     Xnew = [min(meas);mean(meas);max(meas)];
+%     k = 5;
 %     label = predict_knn(X,Y,Xnew,k)
 %     label = 
-%         'fruit'
-%         'fruit'
-%         'fruit'
+%         'setosa'
+%         'versicolor'
+%         'virginica'
 %
 %2.
-%     Ynew = {'fruit';'fruit';'vegetable'};
+%     Ynew = {'versicolor';'versicolor';'virginica'};
 %     [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %     label = 
-%         'fruit'
-%         'fruit'
-%         'fruit'
+%         'setosa'
+%         'versicolor'
+%         'virginica'
 %     accuracy =
 %         0.6667
 
