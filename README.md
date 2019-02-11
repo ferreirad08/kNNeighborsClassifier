@@ -1,7 +1,7 @@
 # k-Nearest Neighbors (kNN) Algorithm
 
 Function 
-1. classifier_knn 
+1. plot_knn 
 2. predict_knn
 
 Description 
