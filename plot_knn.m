@@ -14,7 +14,7 @@ function [label,Ynearest,Xnearest] = plot_knn(X,Y,Xnew,k,status_plot)
 %Description 
 %1. Returns the estimated label of one test instances.
 %2. Returns the estimated label of one test instance, the k nearest training labels and the k nearest training instances.
-%3. Creates a chart circulating the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
+%3. Creates a chart highlighting the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
 %
 %X is an M-by-N matrix, with M instances of N features. 
 %Y is an M-by-1 matrix, with respective M labels to each training instance. 
