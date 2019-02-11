@@ -114,7 +114,7 @@ if nargout > 2, Xnearest = X(I(1:k),:); end
 if tf, label = C(label); end
 end
 
-function [Markers,C2] = prepare_plot(Y)
+function [C2,Markers] = prepare_plot(Y)
 hold on
 grid on
 C2 = unique(Y);
