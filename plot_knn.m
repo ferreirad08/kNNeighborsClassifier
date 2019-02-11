@@ -56,7 +56,7 @@ if tf, [C,~,Y] = unique(Y); end
 A = repmat(Xnew,size(X,1),1)-X;
 distances = sqrt(sum(A.^2,2));
 % Sort the distances in ascending order and check the k nearest training labels
-[distances,I] = sort(distances);
+[~,I] = sort(distances);
 Ynearest = Y(I(1:k));
 % Frequencies of the k nearest training labels
 N = histc(Ynearest,1:max(Ynearest));
@@ -73,7 +73,7 @@ if nargin > 4 && strcmp(status_plot,'plot')
             figure
             [C2,Markers] = prepare_plot(Y);
             
-            r = distances(k);
+            r = distances(I(k));
             xc = Xnew(1);
             yc = Xnew(2);
 
