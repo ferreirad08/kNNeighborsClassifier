@@ -71,10 +71,8 @@ if nargin > 4 && strcmp(status_plot,'plot')
     switch data_dimension
         case 2
             figure
-            [Markers,C2] = prepare_plot(Y);
-            hold on
-            grid on
-
+            [C2,Markers] = prepare_plot(Y);
+            
             r = distances(k);
             xc = Xnew(1);
             yc = Xnew(2);
@@ -93,11 +91,8 @@ if nargin > 4 && strcmp(status_plot,'plot')
             end
         case 3
             figure
-            [Markers,C2] = prepare_plot(Y);
             plot3(Xnew(1),Xnew(2),Xnew(3),'xk','MarkerSize',8,'LineWidth',2)
-            
-            hold on
-            grid on
+            [C2,Markers] = prepare_plot(Y);
             
             Xnearest = X(I(1:k),:);
             for i = 1:k
@@ -120,6 +115,8 @@ if tf, label = C(label); end
 end
 
 function [Markers,C2] = prepare_plot(Y)
-Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
+hold on
+grid on
 C2 = unique(Y);
+Markers = {'o','s','^','d','v','>','<','p','h','+','*','.'};
 end
