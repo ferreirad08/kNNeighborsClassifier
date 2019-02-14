@@ -15,12 +15,17 @@ Example using Iris Data Set
     Y = species;
     Xnew = [min(X);mean(X);max(X)];
     k = 5;
-    label = predict_knn(X,Y,Xnew,k)
+    Ynew = {'versicolor';'versicolor';'virginica'};
+    [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
     
     label =
     
         'setosa'
         'versicolor'
         'virginica'
+        
+    accuracy =
+    
+        0.6667
 
 See more examples described in the script files.
