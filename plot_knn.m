@@ -49,8 +49,7 @@ function [label,Ynearest,Xnearest] = plot_knn(X,Y,Xnew,k,status_plot)
 %     [label,Ynearest,Xnearest] = plot_knn(X,Y,Xnew,k,'plot');
 %               Note: images 2-D and 3-D are among the downloaded files.
 
-tf = iscell(Y);
-if tf, [C,~,Y] = unique(Y); end
+[C,~,Y] = unique(Y,'stable');
 
 % Euclidean distance between two points
 A = repmat(Xnew,size(X,1),1)-X;
@@ -109,9 +108,10 @@ if nargin > 4 && strcmp(status_plot,'plot')
 end
 
 % Check the number of output arguments
-if nargout > 1 && tf, Ynearest = C(Ynearest); end
+if nargout > 1, Ynearest = C(Ynearest); end
 if nargout > 2, Xnearest = X(I(1:k),:); end
-if tf, label = C(label); end
+
+label = C(label);
 end
 
 function [C2,Markers] = prepare_plot(Y)
