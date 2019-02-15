@@ -43,8 +43,7 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %     accuracy =
 %         0.6667
 
-tf = iscell(Y);
-if tf, [C,~,Y] = unique(Y); end
+[C,~,Y] = unique(Y,'stable');
 
 P = size(Xnew,1);
 label = zeros(P,1);
@@ -65,9 +64,9 @@ end
 
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
-    if iscell(Ynew), [~,Ynew] = ismember(Ynew,C); end
+    [~,Ynew] = ismember(Ynew,C);
     accuracy = sum(label == Ynew)/P;
 end
 
-if tf, label = C(label); end
+label = C(label);
 end
