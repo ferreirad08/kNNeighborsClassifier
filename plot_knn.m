@@ -66,6 +66,10 @@ label = Ynearest(J);
 
 label = C(label);
 
+% Check the number of output arguments
+if nargout > 1, Ynearest = C(Ynearest); end
+if nargout > 2, Xnearest = X(I(1:k),:); end
+
 % Check the number of input arguments
 if nargin > 4 && strcmp(status_plot,'plot')
     data_dimension = size(X,2);
@@ -108,10 +112,6 @@ if nargin > 4 && strcmp(status_plot,'plot')
             error('For plotting, instances must have only two or three features (2-D or 3-D).')
     end
 end
-
-% Check the number of output arguments
-if nargout > 1, Ynearest = C(Ynearest); end
-if nargout > 2, Xnearest = X(I(1:k),:); end
 end
 
 function [C2,Markers] = prepare_plot(Y)
