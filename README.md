@@ -15,7 +15,6 @@ Examples using Iris Data Set
     Y = species;
     Xnew = [min(X);mean(X);max(X)];
     k = 5;
-    Ynew = {'versicolor';'versicolor';'virginica'};
     label = predict_knn(X,Y,Xnew,k)
     
     label =
