@@ -8,13 +8,23 @@ Description
 1. Returns the estimated label of one test instance, the k nearest training labels, the k nearest training instances and creates a chart highlighting the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
 2. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
 
-Example using Iris Data Set
+Examples using Iris Data Set
 
     load fisheriris
     X = meas;
     Y = species;
     Xnew = [min(X);mean(X);max(X)];
     k = 5;
+    Ynew = {'versicolor';'versicolor';'virginica'};
+    label = predict_knn(X,Y,Xnew,k)
+    
+    label =
+    
+        'setosa'
+        'versicolor'
+        'virginica'
+        
+        
     Ynew = {'versicolor';'versicolor';'virginica'};
     [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
     
