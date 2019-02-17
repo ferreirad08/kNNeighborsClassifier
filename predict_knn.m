@@ -65,7 +65,7 @@ end
 % Check the number of input and output arguments
 if nargin > 4 && nargout > 1
     [~,Ynew] = ismember(Ynew,C);
-    accuracy = sum(label == Ynew)/P;
+    accuracy = sum(label==Ynew)/P;
 end
 
 label = C(label);
