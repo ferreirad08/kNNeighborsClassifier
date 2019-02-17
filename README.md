@@ -1,14 +1,14 @@
 # k-Nearest Neighbors (kNN) Algorithm
 
 Function 
-1. plot_knn 
-2. predict_knn
-3. find_knn
+1. predict_knn
+2. find_knn
+3. plot_knn
 
 Description 
-1. Returns the estimated label of one test instance, the k nearest training labels, the k nearest training instances and creates a chart highlighting the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
-2. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
-3. Returns the k nearest training instances, the k nearest training labels and the respective distances.
+1. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
+2. Returns the k nearest training instances, the k nearest training labels and the respective distances.
+3. Creates a graphic highlighting the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
 
 Examples using Iris Data Set
 
