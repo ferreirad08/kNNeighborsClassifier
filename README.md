@@ -8,7 +8,7 @@ Function
 Description 
 1. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
 2. Returns the k nearest training instances, the k nearest training labels and the respective distances.
-3. Creates a graphic highlighting the nearest training instances (For plotting, instances must have only two or three features (2-D or 3-D)).
+3. Creates a graphic highlighting the nearest training instances. For plotting, instances must have only two or three features (2-D or 3-D).
 
 Examples using Iris Data Set
 
