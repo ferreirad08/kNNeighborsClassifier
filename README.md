@@ -1,5 +1,7 @@
 # k-Nearest Neighbors (kNN) Algorithm
 
+[![View k-Nearest Neighbors (kNN) Algorithm on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/67018-k-nearest-neighbors-knn-algorithm)
+
 Function 
 1. predict_knn
 2. find_knn
