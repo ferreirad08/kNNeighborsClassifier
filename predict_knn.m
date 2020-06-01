@@ -14,11 +14,11 @@ function [label,accuracy] = predict_knn(X,Y,Xnew,k,Ynew)
 %1. Returns the estimated labels of one or multiple test instances.
 %2. Returns the estimated labels of one or multiple test instances and the accuracy of the estimates.
 %
-%X is an M-by-N matrix, with M instances of N features. 
-%Y is an M-by-1 matrix, with respective M labels to each training instance. 
-%Xnew is an P-by-N matrix, with P instances of N features to be classified.
+%X is a M-by-N matrix, with M instances of N features. 
+%Y is a M-by-1 matrix, with respective M labels to each training instance. 
+%Xnew is a P-by-N matrix, with P instances of N features to be classified.
 %k is a scalar, with the number of nearest neighbors selected.
-%Ynew is an P-by-1 matrix, with respective P labels to each test instance (Used to check the accuracy between 0 and 1).
+%Ynew is a P-by-1 matrix, with respective P labels to each test instance (Used to check the accuracy between 0 and 1).
 %
 %Examples
 %1.
