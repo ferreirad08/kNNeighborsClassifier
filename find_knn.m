@@ -14,9 +14,9 @@ function [Xnearest,Ynearest,distances] = find_knn(X,Y,Xnew,k)
 %1. Returns the k nearest training instances.
 %2. Returns the k nearest training instances, the k nearest training labels and the respective distances.
 %
-%X is an M-by-N matrix, with M instances of N features. 
-%Y is an M-by-1 matrix, with respective M labels to each training instance. 
-%Xnew is an 1-by-N matrix, with one instance of N features to be classified.
+%X is a M-by-N matrix, with M instances of N features. 
+%Y is a M-by-1 matrix, with respective M labels to each training instance. 
+%Xnew is a 1-by-N matrix, with one instance of N features to be classified.
 %k is a scalar, with the number of nearest neighbors selected.
 %
 %Examples
