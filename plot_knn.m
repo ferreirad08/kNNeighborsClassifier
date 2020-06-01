@@ -12,9 +12,9 @@ function plot_knn(X,Y,Xnew,k)
 %Description 
 %1. Creates a graphic highlighting the nearest training instances. For plotting, instances must have only two or three features (2-D or 3-D).
 %
-%X is an M-by-N matrix, with M instances of N features. 
-%Y is an M-by-1 matrix, with respective M labels to each training instance. 
-%Xnew is an 1-by-N matrix, with one instance of N features to be classified.
+%X is a M-by-N matrix, with M instances of N features. 
+%Y is a M-by-1 matrix, with respective M labels to each training instance. 
+%Xnew is a 1-by-N matrix, with one instance of N features to be classified.
 %k is a scalar, with the number of nearest neighbors selected.
 %
 %Example
