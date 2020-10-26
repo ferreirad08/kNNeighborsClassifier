@@ -6,7 +6,7 @@ function Ypred = kNNeighbors(X,Y,Xnew,k)
 % Date: October 2020
 
 [C,~,Y] = unique(Y); % Numeric labels
-distances = pdist2(X,Xnew); % Distance between two vectors
+distances = pdist2(X,Xnew); % Euclidean distance matrix
 [distances,indices] = sort(distances); % Ordered distances
 Ynearest = Y(indices(1:k,:)); % k nearest labels
 Ypred = C(mode(Ynearest)); % Most frequent label
