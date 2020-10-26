@@ -3,13 +3,12 @@
 [![View k-Nearest Neighbors (kNN) Algorithm on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/67018-k-nearest-neighbors-knn-algorithm)
 
 Function 
-1. predict_knn
-2. find_knn
-3. plot_knn
+1. kNNeighbors.predict(_)
+2. kNNeighbors.find(_)
 
 Description 
-1. kNNeighbors.predict - Returns the estimated labels of one or multiple test instances.
-2. kNNeighbors.find - Returns the indices and the respective distances of the k nearest training instances.
+1. Returns the estimated labels of one or multiple test instances.
+2. Returns the indices and the respective distances of the k nearest training instances.
 
 Examples using Iris Data Set
 
