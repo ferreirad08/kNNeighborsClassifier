@@ -1,10 +1,9 @@
 function Ypred = kNNeighbors(X,Y,Xnew,k)
 %k-Nearest Neighbors (kNN)
 %
-% David Alan de Oliveira Ferreira (http://lattes.cnpq.br/3863655668683045)
-% D.Sc. student in Electrical Engineering from the Federal University of
-% Amazonas 
-% e-mail: ferreirad08@gmail.com
+% Author: M.Sc. David Ferreira - Federal University of Amazonas
+% Contact: ferreirad08@gmail.com
+% Date: October 2020
 
 [C,~,Y] = unique(Y); % Numeric labels
 distances = pdist2(X,Xnew); % Distance between two vectors
