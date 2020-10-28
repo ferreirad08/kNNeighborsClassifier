@@ -34,8 +34,7 @@ methods
     function Ypred = predict(obj,Xnew)
         [~,indices] = find(obj,Xnew);
         Ynearest = obj.Y(indices); % k-nearest labels
-        dim = 2 - (obj.k > 1); % dimension
-        Ypred = obj.name_labels(mode(Ynearest,dim)); % Most frequent label
+        Ypred = obj.name_labels(mode(Ynearest,2-(obj.k>1))); % Most frequent label
     end
 end
 end
