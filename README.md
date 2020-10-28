@@ -1,6 +1,6 @@
 # k-Nearest Neighbors (kNN) Classifier
 
-[![View k-Nearest Neighbors (kNN) Algorithm on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/67018-k-nearest-neighbors-knn-algorithm)
+[![View k-Nearest Neighbors (kNN) Classifier on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/67018-k-nearest-neighbors-knn-classifier)
 
 Function 
 1. kNNeighbors.predict(_)
