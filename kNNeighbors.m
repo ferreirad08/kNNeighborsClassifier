@@ -4,7 +4,6 @@ classdef kNNeighbors
 % Author: M.Sc. David Ferreira - Federal University of Amazonas
 % Contact: ferreirad08@gmail.com
 % Date: October 2020
-
 properties
     k = 5
     metric = 'euclidean'
@@ -34,7 +33,8 @@ methods
     function Ypred = predict(obj,Xnew)
         [~,indices] = find(obj,Xnew);
         Ynearest = obj.Y(indices); % k-nearest labels
-        Ypred = obj.name_labels(mode(Ynearest,2-(obj.k>1))); % Most frequent label
+        dim = 2 - (obj.k > 1); % dimension for the mode function
+        Ypred = obj.name_labels(mode(Ynearest,dim)); % Most frequent label
     end
 end
 end
